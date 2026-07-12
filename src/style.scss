@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import url('styles/reset.css');
+
+$black: #000000ff;
+$blue: #14213dff;
+$orange: #fca311ff;
+$darkgray: #e5e5e5ff;
+$gray: #acacac;
+$darkgray: #2b2b2b;
+$white: #ffffffff;
+
+* {
+	font-family: "Inter", sans-serif;
+}
+
+html, body {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	background-color: $black;
+	color: $white;
+}
+
+button {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 0.4rem;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+th {
+	font-weight: 500;
+}
+
+th, td {
+	padding: 0.4rem 1.2rem;
+}
+
+tr {
+	border-bottom: 1.5px solid $darkgray;
+}
+
+tbody tr:last-child {
+	border-bottom: 3px solid $darkgray;
+}
+
+tfoot th {
+	border-right: 1.5px solid $darkgray;
+	text-align: left;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}

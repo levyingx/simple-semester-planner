@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>simple-semester-planner</title>
+	<link rel="stylesheet" type="text/css"
+		href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+	<link rel="stylesheet" type="text/css"
+		href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+</head>
+
+<body>
+	<section>
+		<table>
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>CH</th>
+					<th>Tipo</th>
+				</tr>
+			</thead>
+			<tbody id='list'></tbody>
+			<tfoot>
+				<tr>
+					<th scope="row" colspan="2">N.° Disciplinas:</th>
+					<td id="num-disciplinas">0</td>
+				</tr>
+				<tr>
+					<th scope="row" colspan="2">CH Total:</th>
+					<td id="ch-total">0</td>
+				</tr>
+			</tfoot>
+		</table>
+	</section>
+	<script type="module" src="/src/script.js"></script>
+</body>
+
+</html>
