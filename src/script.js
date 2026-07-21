@@ -1,52 +1,52 @@
 import './style.scss'
 
-class Disciplina {
-    constructor(nome, ch, tipo, status, horario) {
-        this.nome = nome
-        this.ch = ch
-        this.tipo = tipo
+class Discipline {
+    constructor(name, workload, type, status, timetable) {
+        this.name = name
+        this.workload = workload
+        this.type = type
         this.status = status
-        this.horario = horario
+        this.timetable = timetable
     }
 }
 
 let array = [
-    new Disciplina('FMC', 90, 'Obrigatória'),
-    new Disciplina('FMC2', 90, 'Obrigatória'),
-    new Disciplina('VGA', 60, 'Obrigatória'),
-    new Disciplina('Probabilidade', 60, 'Obrigatória'),
-    new Disciplina('Aprendizado de Máquina Não-Supervisionado', 30, 'Optativa'),
-    new Disciplina('MLOps', 60, 'Optativa'),
-    new Disciplina('Boas Práticas de Programação', 30, 'Optativa'),
-    new Disciplina('Grafos', 60, 'Optativa')
+    new Discipline('FMC', 90, 'Obrigatória'),
+    new Discipline('FMC2', 90, 'Obrigatória'),
+    new Discipline('VGA', 60, 'Obrigatória'),
+    new Discipline('Probabilidade', 60, 'Obrigatória'),
+    new Discipline('Aprendizado de Máquina Não-Supervisionado', 30, 'Optativa'),
+    new Discipline('MLOps', 60, 'Optativa'),
+    new Discipline('Boas Práticas de Programação', 30, 'Optativa'),
+    new Discipline('Grafos', 60, 'Optativa')
 ]
 
-const semestre = {
-    ch: array.reduce((acc, current) => acc + current.ch, 0),
-    numDisciplinas: array.length
+const semester = {
+    workload: array.reduce((acc, current) => acc + current.workload, 0),
+    numDisciplines: array.length
 }
 
-function adicionarDisciplina(disciplina) {
-    array.push(disciplina)
+function addDiscipline(Discipline) {
+    array.push(Discipline)
 }
 
-function removerDisciplina(nome) {
-    array = array.filter(d => d.nome !== nome)
+function deleteDiscipline(name) {
+    array = array.filter(d => d.name !== name)
 }
 
 const listElement = document.getElementById('list')
-const numDisciplinasElement = document.getElementById('num-disciplinas')
-const chTotalElement = document.getElementById('ch-total')
+const numDisciplinesElement = document.getElementById('num-disciplines')
+const workloadTotalElement = document.getElementById('workload-total')
 
-for (let disciplina of array) {
+for (let Discipline of array) {
     listElement.innerHTML += `
         <tr>
-	        <td>${disciplina.nome}</td>
-    	    <td>${disciplina.ch}</td>
-    	    <td>${disciplina.tipo}</td>
+	        <td>${Discipline.name}</td>
+    	    <td>${Discipline.workload}</td>
+    	    <td>${Discipline.type}</td>
 	    </tr>
     `
 }
 
-numDisciplinasElement.textContent = semestre.numDisciplinas
-chTotalElement.textContent = `${semestre.ch}h`
+numDisciplinesElement.textContent = semester.numDisciplines
+workloadTotalElement.textContent = `${semester.workload}h`
