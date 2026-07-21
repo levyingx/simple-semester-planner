@@ -5,7 +5,6 @@
 $black: #000000ff;
 $blue: #14213dff;
 $orange: #fca311ff;
-$darkgray: #e5e5e5ff;
 $gray: #acacac;
 $darkgray: #2b2b2b;
 $white: #ffffffff;
@@ -34,6 +33,7 @@ button {
 
 table {
 	border-collapse: collapse;
+	border: 2px solid $darkgray;
 }
 
 th {
@@ -41,11 +41,16 @@ th {
 }
 
 th, td {
-	padding: 0.4rem 1.2rem;
+	padding: 0.25rem 1rem;
 }
 
 tr {
 	border-bottom: 1.5px solid $darkgray;
+}
+
+thead tr {
+    background-color: $darkgray;
+    color: $white;
 }
 
 tbody tr:last-child {
