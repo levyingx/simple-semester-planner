@@ -1,48 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>simple-semester-planner</title>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+        />
+    </head>
 
-<head>
-	<meta charset="UTF-8" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>simple-semester-planner</title>
-	<link rel="stylesheet" type="text/css"
-		href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
-	<link rel="stylesheet" type="text/css"
-		href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
-</head>
+    <body>
+        <main>
+            <section>
+            feat: components dynamization and code modularization
+            
+            - dynamized Timetable and List components;
+            - modularized and updated SCSS code;
+            - modularized and updated JS code;
+            - created /pages directory for HTML pages;
+            - ...and a few tweaks here and there. <table class="timetable">
+                    <thead>
+                        <tr id="timetable-header">
+                            <!--Adds that gap in the first column -->
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="timetable-body"></tbody>
+                </table>
 
-<body>
-	<div>
-		<button commandfor="modal" command="show-modal">Adicionar Disciplina</button>
-		<dialog id="modal">
-			<p>Adicionar disciplina</p>
-			<button commandfor="modal" command="close"></button>
-		</dialog>
-	</div>
-	<section>
-		<table>
-			<thead>
-				<tr>
-					<th>Nome</th>
-					<th>CH</th>
-					<th>Tipo</th>
-				</tr>
-			</thead>
-			<tbody id='list'></tbody>
-			<tfoot>
-				<tr>
-					<th scope="row" colspan="2">N.° Disciplinas:</th>
-					<td id="num-disciplines">0</td>
-				</tr>
-				<tr>
-					<th scope="row" colspan="2">CH Total:</th>
-					<td id="workload-total">0</td>
-				</tr>
-			</tfoot>
-		</table>
-	</section>
-	<script type="module" src="/src/script.js"></script>
-</body>
-
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>CH</th>
+                            <th>Tipo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="list"></tbody>
+                    <tfoot>
+                        <tr>
+                            <th scope="row" colspan="2">N.° Disciplinas:</th>
+                            <td id="num-disciplines">0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="2">CH Total:</th>
+                            <td id="workload-total">0</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+        </main>
+        <script type="module" src="/src/script.js"></script>
+    </body>
 </html>
