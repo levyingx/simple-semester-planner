@@ -1,46 +1,28 @@
 import './style.scss'
-import { Discipline, timeObj, weekObj } from './scripts/data.js'
-
-let array = [
-    new Discipline(
-        'Aprendizado de Máquina Supervisionado',
-        60,
-        'Optativa',
-        '35T12'
-    ),
-    new Discipline(
-        'Introdução à Inteligência Artificial',
-        60,
-        'Optativa',
-        '35M56'
-    ),
-    new Discipline('Envelhecimento, Ed. e Tecnologia', 60, 'Optativa', '24T56'),
-    new Discipline('Boas Práticas de Programação', 30, 'Optativa', '6M56'),
-    new Discipline(
-        'Algoritmo e Programação de Computadores',
-        60,
-        'Eletiva',
-        '35T34'
-    ),
-    new Discipline(
-        'Cálculo Diferencial e Integral I',
-        90,
-        'Obrigatória',
-        '246M12'
-    ),
-]
+import { Discipline, timeObj, weekObj, disciplineArray } from './scripts/data.js'
 
 const semester = {
-    workload: array.reduce((acc, current) => acc + current.workload, 0),
-    numDisciplines: array.length,
+    workload: disciplineArray.reduce((acc, current) => acc + current.workload, 0),
+    numDisciplines: disciplineArray.length,
 }
 
 function addDiscipline(Discipline) {
-    array.push(Discipline)
+    disciplineArray.push(Discipline)
 }
 
 function deleteDiscipline(name) {
-    array = array.filter((d) => d.name !== name)
+    disciplineArray = disciplineArray.filter((d) => d.name !== name)
+}
+
+function parseTimeslot(timeslot) {
+	// if it comes with whitespaces, separate into array of values
+	// for each 
+	const days = timeslot.match(/\d+/)[0]
+	const shift = timeslot.match(/[A-Za-z]+/)[0]
+	const slots = timeslot.match(/\d+$/)[0]
+	console.log('Days: ', days)
+	console.log('Shift: ', shift)
+	console.log('Slots: ', slots)
 }
 
 // Timetable dynamization
@@ -71,12 +53,16 @@ const listElement = document.getElementById('list')
 const numDisciplinesElement = document.getElementById('num-disciplines')
 const workloadTotalElement = document.getElementById('workload-total')
 
-for (let Discipline of array) {
+for (let Discipline of disciplineArray) {
     listElement.innerHTML += `
         <tr>
-	        <td>${Discipline.name}</td>
+	        <td class="list-flex">
+				<div style='background-color: ${Discipline.color}'></div>
+				<span>${Discipline.name}</span>
+			</td>
     	    <td>${Discipline.workload}</td>
     	    <td>${Discipline.type}</td>
+    	    <td>${Discipline.timeslot}</td>
 	    </tr>
     `
 }

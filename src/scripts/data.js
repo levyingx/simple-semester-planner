@@ -1,10 +1,11 @@
 class Discipline {
-    constructor(name, workload, type, status, timetable) {
+    constructor(name, workload, type, timeslot, status = "Pendente", color = "crimson") {
         this.name = name
         this.workload = workload
         this.type = type
+        this.timeslot = timeslot
         this.status = status
-        this.timetable = timetable
+        this.color = color
     }
 }
 
@@ -24,15 +25,51 @@ const timeObj = {
     N1: '18h40',
     N2: '19h30',
     N3: '20h30',
-	N4: '21h20',
+    N4: '21h20',
 }
 
 const weekObj = {
-	2: 'Segunda',
-	3: 'Terça',
-	4: 'Quarta',
-	5: 'Quinta',
-	6: 'Sexta',
+    2: 'Segunda',
+    3: 'Terça',
+    4: 'Quarta',
+    5: 'Quinta',
+    6: 'Sexta',
 }
 
-export { Discipline, timeObj, weekObj }
+let disciplineArray = [
+    new Discipline(
+        'Aprendizado de Máquina Supervisionado',
+        60,
+        'Optativa',
+        '35T12',
+        'Pendente',
+        'rebeccapurple'
+    ),
+    new Discipline(
+        'Introdução à Inteligência Artificial',
+        60,
+        'Optativa',
+        '35M56',
+        'Pendente',
+        'goldenrod'
+    ),
+    new Discipline('Envelhecimento, Ed. e Tecnologia', 60, 'Optativa', '24T56', 'Pendente', 'indigo'),
+    new Discipline('Boas Práticas de Programação', 30, 'Optativa', '6M56', 'Pendente', 'khaki'),
+    new Discipline(
+        'Algoritmo e Programação de Computadores',
+        60,
+        'Eletiva',
+        '35T34',
+        'Pendente',
+        'mediumseagreen'
+    ),
+    new Discipline(
+        'Cálculo Diferencial e Integral I',
+        90,
+        'Obrigatória',
+        '246M12',
+        'Pendente',
+    ),
+]
+
+export { Discipline, timeObj, weekObj, disciplineArray }

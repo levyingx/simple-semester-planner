@@ -3,20 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('styles/reset.scss');
 
-@mixin flex-center($dir: column) {
-    display: flex;
-    flex-direction: $dir;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin wide() {
-    width: 100%;
-    height: 100%;
-}
-
 * {
-    font-size: 14px;
+    font-size: 1rem;
     font-family: 'Inter', sans-serif;
 }
 
@@ -25,7 +13,8 @@ body,
 main {
     display: flex;
     flex-direction: column;
-    @include wide();
+    width: 100%;
+    height: 100%;
     background-color: $white;
     color: $black;
 }
@@ -37,7 +26,10 @@ section {
 }
 
 button {
-    @include flex-center($dir: column);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 0.4rem;
 }
 
@@ -50,7 +42,7 @@ table {
     }
 
     th,
-    td {
+    td:not(.list-flex) {
         padding: 0.25rem 1rem;
     }
 
@@ -79,8 +71,22 @@ tfoot {
     }
 }
 
-.row {
+.timetable th,
+.timetable td {
+    border: 1px solid $darkgray;
+}
+
+.list-flex {
     display: flex;
-    flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
+    gap: 0.5rem;
+    padding: 0;
+    min-height: 2rem;
+
+    div {
+        width: 0.5rem;
+        min-height: 2rem;
+        border-right: 1px solid $darkgray;
+    }
 }
