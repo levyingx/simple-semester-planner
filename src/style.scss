@@ -3,6 +3,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('styles/reset.scss');
 
+$red: oklch(57.7% 0.245 27.325);
+$orange: oklch(70.5% 0.213 47.604);
+$yellow: oklch(82.8% 0.189 84.429);
+$green: oklch(62.7% 0.194 149.214);
+$blue: oklch(54.6% 0.245 262.881);
+$indigo: oklch(49.6% 0.265 301.924);
+$pink: oklch(59.2% 0.249 0.584);
+
 * {
     font-size: 1rem;
     font-family: 'Inter', sans-serif;
@@ -47,7 +55,12 @@ table {
     }
 
     tr {
-        border-bottom: 1.5px solid $darkgray;
+        border-bottom: 0.5px solid $darkgray;
+    }
+
+    tr:nth-of-type(6),
+    tr:nth-of-type(12) {
+        border-bottom: 2px solid $darkgray;
     }
 }
 

@@ -9,6 +9,16 @@ class Discipline {
     }
 }
 
+const color = {
+    red: 'oklch(57.7% 0.245 27.325)',
+    orange: 'oklch(70.5% 0.213 47.604)',
+    yellow: 'oklch(82.8% 0.189 84.429)',
+    green: 'oklch(62.7% 0.194 149.214)',
+    blue: 'oklch(54.6% 0.245 262.881)',
+    indigo: 'oklch(49.6% 0.265 301.924)',
+    pink: 'oklch(59.2% 0.249 0.584)',
+}
+
 const timeObj = {
     M1: '07h',
     M2: '07h50',
@@ -43,7 +53,7 @@ let disciplineArray = [
         'Optativa',
         '35T12',
         'Pendente',
-        'rebeccapurple'
+        color.red
     ),
     new Discipline(
         'Introdução à Inteligência Artificial',
@@ -51,17 +61,17 @@ let disciplineArray = [
         'Optativa',
         '35M56',
         'Pendente',
-        'goldenrod'
+        color.blue
     ),
-    new Discipline('Envelhecimento, Ed. e Tecnologia', 60, 'Optativa', '24T56', 'Pendente', 'indigo'),
-    new Discipline('Boas Práticas de Programação', 30, 'Optativa', '6M56', 'Pendente', 'khaki'),
+    new Discipline('Envelhecimento, Ed. e Tecnologia', 60, 'Optativa', '24T56', 'Pendente', color.pink),
+    new Discipline('Boas Práticas de Programação', 30, 'Optativa', '6M56', 'Pendente', color.indigo),
     new Discipline(
         'Algoritmo e Programação de Computadores',
         60,
         'Eletiva',
         '35T34',
         'Pendente',
-        'mediumseagreen'
+        color.orange
     ),
     new Discipline(
         'Cálculo Diferencial e Integral I',
@@ -69,6 +79,7 @@ let disciplineArray = [
         'Obrigatória',
         '246M12',
         'Pendente',
+        color.green
     ),
 ]
 
