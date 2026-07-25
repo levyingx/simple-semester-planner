@@ -1,58 +1,60 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>simple-semester-planner</title>
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
-        />
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
-        />
-    </head>
 
-    <body>
-        <main>
-            <section>
-                <table class="timetable">
-                    <thead>
-                        <tr id="timetable-header">
-                            <!--Adds that gap in the first column -->
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody id="timetable-body"></tbody>
-                </table>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>simple-semester-planner</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+</head>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>CH</th>
-                            <th>Tipo</th>
-                            <th>Horário</th>
-                        </tr>
-                    </thead>
-                    <tbody id="list"></tbody>
-                    <tfoot>
-                        <tr>
-                            <th scope="row" colspan="2">N.° Disciplinas:</th>
-                            <td id="num-disciplines">0</td>
-                        </tr>
-                        <tr>
-                            <th scope="row" colspan="2">CH Total:</th>
-                            <td id="workload-total">0</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </section>
-        </main>
-        <script type="module" src="/src/script.js"></script>
-    </body>
+<body>
+    <main>
+        <section>
+            <table class="timetable">
+                <thead>
+                    <tr id="timetable-header">
+                        <!--Adds that gap in the first column -->
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="timetable-body"></tbody>
+            </table>
+
+            <table>
+                <thead>
+                    <tr>
+                        <td class="btn-container" colspan="4">
+                            <button>+</button>
+                            <button>-</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Nome</th>
+                        <th>CH</th>
+                        <th>Tipo</th>
+                        <th>Horário</th>
+                    </tr>
+                </thead>
+                <tbody id="list"></tbody>
+                <tfoot>
+                    <tr>
+                        <th scope="row" colspan="2">N.° Disciplinas:</th>
+                        <td id="num-disciplines">0</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" colspan="2">CH Total:</th>
+                        <td id="workload-total">0</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+    </main>
+    <script type="module" src="/src/script.js"></script>
+</body>
+
 </html>

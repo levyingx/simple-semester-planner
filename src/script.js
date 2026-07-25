@@ -92,11 +92,8 @@ const workloadTotalElement = document.getElementById('workload-total')
 function renderList() {
 	for (let Discipline of disciplineArray) {
 		listElement.innerHTML += `
-        <tr>
-	        <td class="list-flex">
-				<div style='background-color: ${Discipline.color}'></div>
-				<span>${Discipline.name}</span>
-			</td>
+        <tr style="box-shadow: 8px 0px inset ${Discipline.color}, 9.5px 0px inset #2b2b2b;">
+	        <td>${Discipline.name}</td>
     	    <td>${Discipline.workload}</td>
     	    <td>${Discipline.type}</td>
     	    <td>${Discipline.timeslot}</td>
@@ -105,5 +102,5 @@ function renderList() {
 	}
 }
 
-renderTimetable() 
+renderTimetable()
 renderList()

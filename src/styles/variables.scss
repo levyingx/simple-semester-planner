@@ -1,15 +1,14 @@
-$red: #f94144ff;
-$tangerine: #f3722cff;
-$orange: #f8961eff;
-$coral: #f9844aff;
-$yellow: #f9c74fff;
-$green: #90be6dff;
-$mediumgreen: #43aa8bff;
-$cyan: #4d908eff;
-$slate: #577590ff;
-$darkblue: #277da1ff;
+$red: oklch(57.7% 0.245 27.325);
+$orange: oklch(70.5% 0.213 47.604);
+$yellow: oklch(82.8% 0.189 84.429);
+$green: oklch(62.7% 0.194 149.214);
+$blue: oklch(54.6% 0.245 262.881);
+$indigo: oklch(49.6% 0.265 301.924);
+$pink: oklch(59.2% 0.249 0.584);
 
 $black: #000000ff;
-$gray: #acacac;
 $darkgray: #2b2b2b;
-$white: #ffffffff;
+$gray: #acacac;
+$white: oklch(97.015% 0.00011 271.152);
+
+$font: "Geist", sans-serif;
