@@ -150,3 +150,7 @@ tfoot {
         align-self: center;
     }
 }
+
+[contenteditable="true"]:focus {
+    outline: none;
+}

@@ -6,7 +6,10 @@ function addDiscipline(Discipline) {
 }
 
 function deleteDiscipline(name) {
-	disciplineArray = disciplineArray.filter((d) => d.name !== name)
+	const index = disciplineArray.findIndex((d) => d.name === name)
+	if (index !== -1) {
+		disciplineArray.splice(index, 1)
+	}
 }
 
 function getRenderDataFromDiscipline(Discipline) {
@@ -14,7 +17,7 @@ function getRenderDataFromDiscipline(Discipline) {
 	const timeslotArray = timeslot.split(',')
 	const array = []
 
-	for (let t of timeslotArray) {
+	timeslotArray.forEach(t => {
 		const days = t.match(/\d+/)[0].split('')
 
 		// Shift has only one letter
@@ -26,7 +29,7 @@ function getRenderDataFromDiscipline(Discipline) {
 				array.push(`${day}${shift}${slot}`)
 			}
 		}
-	}
+	})
 
 	return array
 }
@@ -34,6 +37,17 @@ function getRenderDataFromDiscipline(Discipline) {
 // Timetable dynamization
 const timetableHeader = document.getElementById('timetable-header')
 const timetableBody = document.getElementById('timetable-body')
+
+function cleanTimetable() {
+	for (const [i, [code, time]] of Object.entries(timeObj).entries()) {
+		const weekLength = Object.keys(weekObj).length
+		for (let j = 0; j < weekLength; j++) {
+			const weekNumber = Object.keys(weekObj)[j]
+			const td = document.getElementById(`${weekNumber}${code}`)
+			td.style.backgroundColor = 'whitesmoke'
+		}
+	}
+}
 
 function updateTimetable() {
 	for (const discipline of disciplineArray) {
@@ -52,7 +66,6 @@ function initTimetable() {
 	for (const [number, weekday] of Object.entries(weekObj)) {
 		const th = document.createElement('th')
 		th.textContent = number
-
 		timetableHeader.appendChild(th)
 	}
 
@@ -61,17 +74,14 @@ function initTimetable() {
 
 		const th = document.createElement('th')
 		th.textContent = code
-
 		tr.appendChild(th)
 
 		const weekLength = Object.keys(weekObj).length
 		for (let j = 0; j < weekLength; j++) {
 			const weekNumber = Object.keys(weekObj)[j]
-
 			const td = document.createElement('td')
 			const id = `${weekNumber}${code}`
 			td.id = id
-
 			tr.appendChild(td)
 		}
 
@@ -90,17 +100,49 @@ const numDisciplinesElement = document.getElementById('num-disciplines')
 const workloadTotalElement = document.getElementById('workload-total')
 
 function renderList() {
-	for (let Discipline of disciplineArray) {
+	listElement.innerHTML = ''
+
+	disciplineArray.forEach((Discipline, i) => {
 		listElement.innerHTML += `
-        <tr style="box-shadow: 8px 0px inset ${Discipline.color}, 9.5px 0px inset #2b2b2b;">
-	        <td>${Discipline.name}</td>
-    	    <td>${Discipline.workload}</td>
-    	    <td>${Discipline.type}</td>
-    	    <td>${Discipline.timeslot}</td>
-	    </tr>
-    `
-	}
+			<tr style="box-shadow: 8px 0px inset ${Discipline.color}, 9.5px 0px inset #2b2b2b;">
+				<td data-index="${i}" data-property="name" contenteditable="true">${Discipline.name}</td>
+				<td data-index="${i}" data-property="workload" contenteditable="true">${Discipline.workload}</td>
+				<td data-index="${i}" data-property="type" contenteditable="true">${Discipline.type}</td>
+				<td data-index="${i}" data-property="timeslot" contenteditable="true">${Discipline.timeslot}</td>
+			</tr>
+    	`
+	})
 }
+
+listElement.addEventListener("keydown", (e) => {
+	const cell = e.target
+	const index = Number(cell.dataset.index)
+	const property = cell.dataset.property
+
+	if (!cell.matches("[contenteditable]")) {
+		return
+	}
+
+	// When "Enter" is pressed, the cell value is updated
+	if (e.key === "Enter") {
+		e.preventDefault()
+		disciplineArray[index][property] = cell.textContent
+		cell.blur()
+		cleanTimetable()
+		updateTimetable()
+		renderList()
+	}
+
+	// When "Delete" is pressed, delete cell and value from array
+	if (e.key === "Delete") {
+		e.preventDefault()
+		cell.blur()
+		deleteDiscipline(cell.textContent)
+		cleanTimetable()
+		updateTimetable()
+		renderList()
+	}
+})
 
 renderTimetable()
 renderList()
