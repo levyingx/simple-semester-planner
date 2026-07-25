@@ -6,9 +6,10 @@ $blue: oklch(54.6% 0.245 262.881);
 $indigo: oklch(49.6% 0.265 301.924);
 $pink: oklch(59.2% 0.249 0.584);
 
-$black: #000000ff;
-$darkgray: #2b2b2b;
-$gray: #acacac;
+$black: oklch(0% 0 0);
+$darkgray: oklch(28.908% 0.00003 271.152);
+$lightgray: oklch(90.67% 0.0001 271.152);
+$gray: oklch(74.443% 0.00008 271.152);
 $white: oklch(97.015% 0.00011 271.152);
 
 $font: "Geist", sans-serif;
