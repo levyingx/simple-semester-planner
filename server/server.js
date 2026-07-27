@@ -1,13 +1,17 @@
+import { JSONFilePreset } from 'lowdb/node'
 import express from 'express'
-const app = express()
 
-// a hundred bucks? the ad said 3000
+import { Discipline, color } from '../src/scripts/data.js'
+
+const app = express()
 const port = 3000
 
-app.get('/', (req, res) => {
-    res.send('I missed the part where thats my problem.')
+const db = await JSONFilePreset('server/db.json', { posts: [] })
+
+app.get('/semester', (req, res) => {
+    res.send(db.data.posts.at(0))
 });
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+    console.log(`App listening on port ${port}`)
 });

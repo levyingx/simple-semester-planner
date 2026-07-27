@@ -83,4 +83,4 @@ let disciplineArray = [
     ),
 ]
 
-export { Discipline, timeObj, weekObj, disciplineArray }
+export { Discipline, timeObj, weekObj, disciplineArray, color }
