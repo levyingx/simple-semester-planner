@@ -3,6 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('styles/reset.scss');
 
+:root {
+    color-scheme: light dark;
+}
+
 * {
     font-size: 1rem;
     font-family: $font;
@@ -15,15 +19,23 @@ main {
     flex-direction: column;
     width: 100%;
     height: 100%;
-    background-color: $white;
-    color: $black;
+    background-color: light-dark($white, $black);
+    color: light-dark($black, $white);
+    border-color: light-dark($darkgray, $white);
+}
+
+h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 header {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    
+
     div:first-of-type {
         padding: 0.5rem;
     }
@@ -35,18 +47,19 @@ header {
     }
 }
 
-aside {
-    display: flex;
-    flex-direction: column;
-}
-
 h2 {
     font-size: 1.5rem;
     font-weight: 600;
+
+    span {
+        font-size: 1.15rem;
+        font-weight: 300;
+    }
 }
 
 section {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
     gap: 2rem;
 }
@@ -66,7 +79,7 @@ button:hover {
 
 table {
     border-collapse: collapse;
-    border: 2px solid $darkgray;
+    border: 2px solid;
 
     th {
         font-weight: 500;
@@ -74,13 +87,13 @@ table {
     }
 
     tr {
-        border-bottom: 0.5px solid $darkgray;
+        border-bottom: 0.5px solid;
     }
 }
 
 thead {
     tr {
-        background-color: $darkgray;
+        background-color: light-dark($darkgray, $darkgray-50);
         color: $white;
     }
 
@@ -97,7 +110,6 @@ thead {
         padding: 0;
         background-color: white;
         aspect-ratio: 1 / 1;
-
     }
 }
 
@@ -151,6 +163,6 @@ tfoot {
     }
 }
 
-[contenteditable="true"]:focus {
+[contenteditable='true']:focus {
     outline: none;
 }
