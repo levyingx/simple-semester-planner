@@ -1,0 +1,29 @@
+@use 'variables.scss' as *;
+
+.tippy-box[data-theme~='semester'] {
+    background-color: light-dark($lightgray, $darkgray);
+    color: light-dark($black, $white);
+    border-radius: 0;
+    font-weight: 300;
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.18);
+}
+
+.tippy-box[data-theme~='semester'][data-placement^='top']
+    > .tippy-arrow::before {
+    border-top-color: $darkgray;
+}
+
+.tippy-box[data-theme~='semester'][data-placement^='bottom']
+    > .tippy-arrow::before {
+    border-bottom-color: $darkgray;
+}
+
+.tippy-box[data-theme~='semester'][data-placement^='left']
+    > .tippy-arrow::before {
+    border-left-color: $darkgray;
+}
+
+.tippy-box[data-theme~='semester'][data-placement^='right']
+    > .tippy-arrow::before {
+    border-right-color: $darkgray;
+}
