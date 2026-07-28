@@ -4,7 +4,7 @@ const listElement = document.getElementById('list')
 const numDisciplinesElement = document.getElementById('num-disciplines')
 const workloadTotalElement = document.getElementById('workload-total')
 
-function renderList() {
+function render() {
     listElement.innerHTML = ''
 
     disciplineArray.forEach((Discipline, i) => {
@@ -34,7 +34,7 @@ listElement.addEventListener("keydown", (e) => {
         cell.blur()
         timetable.clear()
         timetable.refresh()
-        renderList()
+        render()
     }
 
     if (e.key === "Delete") {
@@ -43,8 +43,10 @@ listElement.addEventListener("keydown", (e) => {
         deleteDiscipline(cell.textContent)
         timetable.clear()
         timetable.refresh()
-        renderList()
+        render()
     }
 })
 
-renderList()
+export {
+    render
+}

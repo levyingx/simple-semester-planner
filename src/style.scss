@@ -38,13 +38,16 @@ header {
     justify-content: flex-start;
 
     div:first-of-type {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding: 0.5rem;
     }
 
     nav {
         display: flex;
         width: 100%;
-        background-color: $lightgray;
+        background-color: light-dark($lightgray, $darkgray);
     }
 }
 
@@ -62,7 +65,8 @@ section {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    gap: 2rem;
+    gap: 1rem;
+    padding: 1rem 0.5rem;
 }
 
 button {
