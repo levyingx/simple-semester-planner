@@ -16,7 +16,6 @@ function render() {
                     <span 
                         class="badge" 
                         style="
-                            background-color: ${typeObj[Discipline.type].bgColor}; 
                             color: ${typeObj[Discipline.type].textColor};
                             outline-color: ${typeObj[Discipline.type].outlineColor};
                         "
