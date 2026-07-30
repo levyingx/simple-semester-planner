@@ -19,6 +19,29 @@ const color = {
     pink: 'oklch(59.2% 0.249 0.584)',
 }
 
+const typeObj = {
+    'Pendente': {
+        bgColor: 'oklch(28.908% 0.00003 271.152 / 0.2)',
+        outlineColor: 'oklch(28.908% 0.00003 271.152 / 0.4)',
+        textColor: 'oklch(28.908% 0.00003 271.152)',
+    },
+    'Obrigatória': {
+        bgColor: 'oklch(57.7% 0.245 27.325 / 0.25)',
+        outlineColor: 'oklch(57.7% 0.245 27.325 / 0.4)',
+        textColor: 'oklch(57.7% 0.245 27.325)',
+    },
+    'Optativa': {
+        bgColor: 'oklch(62.7% 0.194 149.214 / 0.25)',
+        outlineColor: 'oklch(62.7% 0.194 149.214 / 0.4)',
+        textColor: 'oklch(62.7% 0.194 149.214)',
+    },
+    'Eletiva': {
+        bgColor: 'oklch(54.6% 0.245 262.881 / 0.25)',
+        outlineColor: 'oklch(54.6% 0.245 262.881 / 0.4)',
+        textColor: 'oklch(54.6% 0.245 262.881)',
+    },
+}
+
 const timeObj = {
     M1: '07h',
     M2: '07h50',
@@ -83,4 +106,4 @@ let disciplineArray = [
     ),
 ]
 
-export { Discipline, timeObj, weekObj, disciplineArray, color }
+export { Discipline, timeObj, weekObj, disciplineArray, typeObj, color }

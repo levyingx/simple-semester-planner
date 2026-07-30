@@ -83,7 +83,6 @@ button:hover {
 }
 
 table {
-    
     border-collapse: collapse;
     border: 2px solid;
 
@@ -157,17 +156,12 @@ tfoot {
     border: 1px solid $darkgray;
 }
 
-.list-flex {
+.list .badge {
     display: flex;
-    justify-content: flex-start;
-    align-items: stretch;
-    gap: 0.5rem;
-    padding: 0;
-    height: stretch;
-
-    span {
-        align-self: center;
-    }
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 0.4rem;
+    outline: 2px solid;
 }
 
 [contenteditable='true']:focus {

@@ -1,5 +1,4 @@
 import * as data from './data'
-import { setCellTooltip } from './tooltip'
 
 const header = document.getElementById('timetable-header')
 const body = document.getElementById('timetable-body')
@@ -91,7 +90,6 @@ function refresh() {
         array.forEach(timeslot => {
             const cell = getCell(timeslot)
             paintCell(cell, discipline.color)
-            setCellTooltip(cell, discipline)
         })
     }
 }
