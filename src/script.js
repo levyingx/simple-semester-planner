@@ -6,7 +6,7 @@ import * as timetable from './scripts/timetable.js'
 import * as list from './scripts/list.js'
 
 document.addEventListener('DOMContentLoaded', async () => {
-    timetable.init()
+    timetable.render()
 
     await list.render()    
 })

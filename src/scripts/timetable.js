@@ -1,3 +1,4 @@
+import axios from 'axios'
 import * as data from './data'
 
 const header = document.getElementById('timetable-header')
@@ -82,8 +83,8 @@ function clear() {
     }
 }
 
-function refresh() {
-    for (const discipline of data.disciplineArray) {
+async function fill(data) {
+    for (const discipline of data) {
         const array = getRenderDataFromDiscipline(discipline)
 
         array.forEach(timeslot => {
@@ -118,21 +119,17 @@ function init() {
     }
 }
 
-function render() {
+async function render() {
     init()
-    refresh()
+
+    try {
+        const { data } = await axios.get('http://localhost:8080/disciplines')
+        fill(data)
+    } catch (error) {
+        console.error('Error fetching list data:', error.message)
+    }
 }
 
 export {
-    getRenderDataFromDiscipline,
-    paintCell,
-    clearCell,
-    getCell,
-    forEachCell,
-    clear,
-    init,
-    render,
-    refresh,
-    header,
-    body,
+    render
 }
