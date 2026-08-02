@@ -3,7 +3,6 @@ import * as data from './data'
 const header = document.getElementById('timetable-header')
 const body = document.getElementById('timetable-body')
 
-
 function getRenderDataFromDiscipline(Discipline) {
     const timeslot = Discipline.timeslot
     const timeslotArray = timeslot.split(',')
@@ -12,7 +11,7 @@ function getRenderDataFromDiscipline(Discipline) {
     timeslotArray.forEach(t => {
         const days = t.match(/\d+/)[0].split('')
 
-        // Shift has only one letter
+        // Shift has only one letter (M, T or N)
         const shift = t.match(/[A-Za-z]+/)[0]
         const slots = t.match(/\d+$/)[0].split('')
 

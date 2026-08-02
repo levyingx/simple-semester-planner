@@ -1,11 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>simple-semester-planner</title>
+    <title>Miniworks Sage</title>
     <link rel="stylesheet" type="text/css"
         href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
     <link rel="stylesheet" type="text/css"
@@ -16,10 +16,10 @@
     <header>
         <div>
             <h2>Miniworks <span>Sage</span></h2>
-            <div id="user-name"></div>
+            <div id="user-name">Student</div>
         </div>
         <nav>
-            horizontal nav goes here. should look like google sheets cause i like it 
+
         </nav>
     </header>
     <main>
@@ -27,7 +27,7 @@
             <table class="timetable">
                 <thead>
                     <tr id="timetable-header">
-                        <!--Adds that gap in the first column -->
+                        <!-- Adds that gap in the first column -->
                         <th></th>
                     </tr>
                 </thead>
@@ -43,7 +43,16 @@
                         <th>Horário</th>
                     </tr>
                 </thead>
-                <tbody id="list"></tbody>
+                <tbody id="list">
+                    <tr>
+                        <td data-index="${i}" data-property="name">${Discipline.name}</td>
+                        <td data-index="${i}" data-property="workload">${Discipline.workload}</td>
+                        <td data-index="${i}" data-property="type">
+                            <span class="badge">${Discipline.type}</span>
+                        </td>
+                        <td data-index="${i}" data-property="timeslot">${Discipline.timeslot}</td>
+                    </tr>
+                </tbody>
                 <tfoot>
                     <tr>
                         <th scope="row" colspan="2">N.° Disciplinas:</th>
@@ -57,6 +66,7 @@
             </table>
         </section>
     </main>
+    <footer></footer>
     <script type="module" src="/src/script.js"></script>
 </body>
 

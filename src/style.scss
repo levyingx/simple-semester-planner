@@ -87,6 +87,7 @@ table {
     border: 2px solid;
 
     th {
+        
         font-weight: 500;
         padding: 0.25rem 1rem;
     }
@@ -128,7 +129,9 @@ tbody {
     }
 
     td {
+        text-align: left;
         padding: 0.25rem 1rem;
+        height: 32.8px;
     }
 }
 
@@ -151,17 +154,21 @@ tfoot {
     }
 }
 
+.timetable thead th {
+    text-align: center;
+}
+
 .timetable th,
 .timetable td {
     border: 1px solid $darkgray;
 }
 
-.list .badge {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0rem 0.4rem;
-    outline: 2px solid;
+.list {
+    flex-grow: 1;
+}
+
+.list thead th {
+    text-align: left;
 }
 
 [contenteditable='true']:focus {
