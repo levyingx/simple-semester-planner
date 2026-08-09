@@ -27,3 +27,20 @@
     > .tippy-arrow::before {
     border-right-color: $darkgray;
 }
+
+.tippy-box .tippy-content {
+    gap: 0.4rem;
+    padding: 0.25rem;
+}
+
+.tippy-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+}
+
+.tippy-timeslot {
+    font-weight: 500;
+}
+

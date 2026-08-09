@@ -1,6 +1,8 @@
 import axios from 'axios'
 import * as data from './data'
 
+import {setCellTooltip} from './tooltip'
+
 const header = document.getElementById('calendar-header')
 const body = document.getElementById('calendar-body')
 
@@ -89,6 +91,7 @@ async function fill(data) {
 
         array.forEach(timeslot => {
             const cell = getCell(timeslot)
+            setCellTooltip(cell, discipline)
             paintCell(cell, discipline.color)
         })
     }

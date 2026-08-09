@@ -10,14 +10,27 @@
         href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
     <link rel="stylesheet" type="text/css"
         href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+    <script type="module" src="/src/script.js" defer></script>
 </head>
 
 <body>
     <header>
         <div>
             <h2>Miniworks <span>Sage</span></h2>
-            <div id="user-name">Student</div>
+            <div class="link-container">
+                <a href="index.html">Cronograma</a>
+                <a href="src/pages/course-completion.html">Progresso</a>
+            </div>
+            <div id="user-name">[First Letter]</div>
         </div>
+        <nav>
+            <button type="button" commandfor="add-discipline-modal" command="show-modal"
+                id="add-discipline-btn">Adicionar disciplina</button>
+            <button type="button" commandfor="edit-discipline-modal" command="show-modal"
+                id="edit-discipline-btn">Editar disciplina</button>
+            <button type="button" commandfor="delete-discipline-modal" command="show-modal"
+                id="delete-discipline-btn">Remover disciplina</button>
+        </nav>
     </header>
     <main>
         <section>
@@ -41,13 +54,53 @@
                     </tr>
                 </thead>
                 <tbody id="list">
-                    <tr>
-                        <td data-index="${i}" data-property="name">${Discipline.name}</td>
-                        <td data-index="${i}" data-property="workload">${Discipline.workload}</td>
-                        <td data-index="${i}" data-property="type">
-                            <span class="badge">${Discipline.type}</span>
+                    <tr style="box-shadow: 8px 0px inset white, 9.5px 0px inset white;">
+                        <td data-property="name"></td>
+                        <td data-property="workload"></td>
+                        <td data-property="type">
+                            <span class="badge"></span>
                         </td>
-                        <td data-index="${i}" data-property="timeslot">${Discipline.timeslot}</td>
+                        <td data-property="timeslot"></td>
+                    </tr>
+                    <tr style="box-shadow: 8px 0px inset white, 9.5px 0px inset white;">
+                        <td data-property="name"></td>
+                        <td data-property="workload"></td>
+                        <td data-property="type">
+                            <span class="badge"></span>
+                        </td>
+                        <td data-property="timeslot"></td>
+                    </tr>
+                    <tr style="box-shadow: 8px 0px inset white, 9.5px 0px inset white;">
+                        <td data-property="name"></td>
+                        <td data-property="workload"></td>
+                        <td data-property="type">
+                            <span class="badge"></span>
+                        </td>
+                        <td data-property="timeslot"></td>
+                    </tr>
+                    <tr style="box-shadow: 8px 0px inset white, 9.5px 0px inset white;">
+                        <td data-property="name"></td>
+                        <td data-property="workload"></td>
+                        <td data-property="type">
+                            <span class="badge"></span>
+                        </td>
+                        <td data-property="timeslot"></td>
+                    </tr>
+                    <tr style="box-shadow: 8px 0px inset white, 9.5px 0px inset white;">
+                        <td data-property="name"></td>
+                        <td data-property="workload"></td>
+                        <td data-property="type">
+                            <span class="badge"></span>
+                        </td>
+                        <td data-property="timeslot"></td>
+                    </tr>
+                    <tr style="box-shadow: 8px 0px inset white, 9.5px 0px inset white;">
+                        <td data-property="name"></td>
+                        <td data-property="workload"></td>
+                        <td data-property="type">
+                            <span class="badge"></span>
+                        </td>
+                        <td data-property="timeslot"></td>
                     </tr>
                 </tbody>
                 <tfoot>
@@ -63,8 +116,30 @@
             </table>
         </section>
     </main>
-    <footer></footer>
-    <script type="module" src="/src/script.js"></script>
+
+    <dialog id="add-discipline-modal">
+        <p>Adicionar disciplina</p>
+
+        <button type="button" commandfor="add-discipline-modal" command="close">
+            Fechar
+        </button>
+    </dialog>
+
+    <dialog id="edit-discipline-modal">
+        <p>Editar disciplina</p>
+
+        <button type="button" commandfor="edit-discipline-modal" command="close">
+            Fechar
+        </button>
+    </dialog>
+
+    <dialog id="delete-discipline-modal">
+        <p>Remover disciplina</p>
+
+        <button type="button" commandfor="delete-discipline-modal" command="close">
+            Fechar
+        </button>
+    </dialog>
 </body>
 
 </html>

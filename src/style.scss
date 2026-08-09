@@ -1,179 +1,211 @@
 @use 'styles/variables.scss' as *;
 
-@import url('https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:ital,wght@0,100..900;1,100..900&family=Geist+Pixel&family=Geist:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('styles/reset.scss');
 @import url('styles/tooltip.scss');
 
 :root {
-  color-scheme: light dark;
+    color-scheme: light dark;
 }
 
 * {
-  font-size: 1rem;
-  font-family: $font;
+    font-size: 1rem;
+    font-family: $font;
 }
 
 html,
 body,
 main {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  background-color: light-dark($white, $black);
-  color: light-dark($black, $white);
-  border-color: light-dark($darkgray, $white);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: light-dark($white, $black);
+    color: light-dark($black, $white);
+    border-color: light-dark($darkgray, $white);
+}
+
+main {
+    padding: 0 1rem;
 }
 
 h1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 header {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 header div:first-of-type {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+header .link-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+header .link-container a {
+    color: light-dark($black, $white);
+    text-decoration: none;
+    padding: 0.375rem 1rem;
+}
+
+header .link-container a:hover {
+    background-color: $darkgray-50;
+}
+
+header .link-container a:active {
+    background-color: $darkgray;
 }
 
 header nav {
-  display: flex;
-  width: 100%;
-  background-color: light-dark($lightgray, $darkgray);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    background-color: light-dark($lightgray-50, $darkgray-50);
+}
+
+header nav button {
+    font-size: 0.85rem;
+    padding: 0.35rem 1.25rem;
+    background-color: transparent;
 }
 
 h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 h2 span {
-  font-size: 1.15rem;
-  font-weight: 300;
+    font-size: 1.15rem;
+    font-weight: 300;
 }
 
 section {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 1rem;
-  padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 0.5rem;
 }
 
 button {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0.288rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.288rem;
 }
 
 button:hover {
-  background-color: $gray;
-  cursor: pointer;
+    background-color: $gray;
+    cursor: pointer;
 }
 
 table {
-  border-collapse: collapse;
-  border: 2px solid;
+    border-collapse: collapse;
+    border: 2px solid;
 }
 
 table th {
-  font-weight: 500;
-  padding: 0.25rem 1rem;
+    font-weight: 500;
+    padding: 0.25rem 1rem;
 }
 
 table tr {
-  border-bottom: 0.5px solid;
+    border-bottom: 0.5px solid;
 }
 
 thead tr {
-  background-color: light-dark($darkgray, $darkgray-50);
-  color: $white;
+    background-color: light-dark($darkgray, $darkgray-50);
+    color: $white;
 }
 
 thead .btn-container {
-  display: flex;
-  gap: 0.2rem;
-  padding: 0.2rem 0.2rem;
+    display: flex;
+    gap: 0.2rem;
+    padding: 0.2rem 0.2rem;
 }
 
 thead .btn-container button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  background-color: white;
-  aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background-color: white;
+    aspect-ratio: 1 / 1;
 }
 
 tbody tr {
-  height: 1rem;
+    height: 1rem;
 }
 
 tbody tr:last-child {
-  border-bottom: 3px solid;
+    border-bottom: 3px solid;
 }
 
 tbody td {
-  text-align: left;
-  padding: 0.25rem 1rem;
-  height: 32.8px;
+    text-align: left;
+    padding: 0.25rem 1rem;
+    height: 32.8px;
 }
 
 tfoot th {
-  border-right: 1.5px solid;
-  text-align: left;
+    border-right: 1.5px solid;
+    text-align: left;
 }
 
 tfoot td {
-  padding: 0.25rem 1rem;
+    padding: 0.25rem 1rem;
 }
 
 .calendar {
-  flex-grow: 1;
+    flex-grow: 1;
 }
 
 .calendar tr:nth-of-type(6),
 .calendar tr:nth-of-type(12) {
-  border-bottom: 2px solid $darkgray;
+    border-bottom: 2px solid $darkgray;
 }
 
 .calendar thead th {
-  text-align: center;
+    text-align: center;
 }
 
 .calendar th,
 .calendar td {
-  border: 1px solid $darkgray;
+    border: 1px solid $darkgray;
 }
 
 .list {
-  flex-grow: 1;
+    flex-grow: 1;
 }
 
 .list thead th {
-  text-align: left;
+    text-align: left;
 }
 
-.list td[data-property="name"] {
-  min-width: 24rem;
-  max-width: 24rem;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+.list td[data-property='name'] {
+    min-width: 24rem;
+    max-width: 24rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 [contenteditable='true']:focus {
-  outline: none;
+    outline: none;
 }
-
