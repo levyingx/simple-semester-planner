@@ -54,7 +54,7 @@ async function fill(data) {
 
     const numDisciplines = data.length
     const totalWorkload = data.reduce((acc, current) => acc + current.workload, 0)
-    
+
     numDisciplinesElement.textContent = numDisciplines
     workloadTotalElement.textContent = `${totalWorkload}h`
 }
@@ -93,8 +93,8 @@ listElement.addEventListener("keydown", (e) => {
         e.preventDefault()
         disciplineArray[index][property] = cell.textContent
         cell.blur()
-        timetable.clear()
-        timetable.refresh()
+        calendar.clear()
+        calendar.refresh()
         render()
     }
 
@@ -102,8 +102,8 @@ listElement.addEventListener("keydown", (e) => {
         e.preventDefault()
         cell.blur()
         deleteDiscipline(cell.textContent)
-        timetable.clear()
-        timetable.refresh()
+        calendar.clear()
+        calendar.refresh()
         render()
     }
 })

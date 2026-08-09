@@ -1,8 +1,8 @@
 import axios from 'axios'
 import * as data from './data'
 
-const header = document.getElementById('timetable-header')
-const body = document.getElementById('timetable-body')
+const header = document.getElementById('calendar-header')
+const body = document.getElementById('calendar-body')
 
 function getRenderDataFromDiscipline(Discipline) {
     const timeslot = Discipline.timeslot
@@ -67,7 +67,7 @@ function getCell(id) {
     return document.getElementById(id)
 }
 
-/** Iterates through every cell in the timetable. */
+/** Iterates through every cell in the calendar. */
 function forEachCell() {
     // TODO!
 }
@@ -126,7 +126,7 @@ async function render() {
         const { data } = await axios.get('http://localhost:8080/disciplines')
         fill(data)
     } catch (error) {
-        console.error('Error fetching list data:', error.message)
+        console.error('Error fetching calendar data:', error.message)
     }
 }
 
